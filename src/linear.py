@@ -4,6 +4,11 @@ import matplotlib.pyplot as plt  # Library for generating plots
 
 # Definition of the function that plots a piecewise function and its derivative
 def plot_piecewise_func():
+    ''' 
+    Plots a piecewise function and its derivative.
+    The function has three segments: a constant, a linear, and another constant part.
+    '''
+    
     # Definition of the piecewise function
     def piecewise_func(x):
         return np.piecewise(x, 

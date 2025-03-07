@@ -4,6 +4,10 @@ import matplotlib.pyplot as plt  # Library for generating plots
 
 # Definition of the function that plots the identity function and its derivative
 def plot_identity():
+    ''' 
+    Plots the identity function (f(x) = x) and its derivative.
+    The identity function returns the input value, and its derivative is always 1.
+    '''
 
     # Definition of the identity function (f(x) = x)
     def identity(x):

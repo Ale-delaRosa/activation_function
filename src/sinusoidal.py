@@ -4,6 +4,10 @@ import matplotlib.pyplot as plt  # Library for generating plots
 
 # Definition of the function that plots the sinusoidal function and its derivative
 def plot_sinusoidal():
+    ''' 
+    Plots the sinusoidal function (sine) and its derivative (cosine).
+    The sine function is a fundamental trigonometric function used in signal processing and wave analysis.
+    '''
   
     # Definition of the sinusoidal function
     def sin_func(x):

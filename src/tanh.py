@@ -1,52 +1,56 @@
-# Importación de bibliotecas necesarias
-import numpy as np  # Biblioteca para operaciones matemáticas y manipulación de arreglos numéricos
-import matplotlib.pyplot as plt  # Biblioteca para la generación de gráficos
+# Import necessary libraries
+import numpy as np  # Library for mathematical operations and numerical array manipulation
+import matplotlib.pyplot as plt  # Library for generating plots
 
-# Definición de la función que grafica la función tangente hiperbólica y su derivada
+# Definition of the function that plots the hyperbolic tangent function and its derivative
 def plot_tanh():
+    ''' 
+    Plots the hyperbolic tangent function (tanh) and its derivative.
+    The tanh function is commonly used as an activation function in neural networks.
+    '''
 
-    # Definición de la función tangente hiperbólica
+    # Definition of the hyperbolic tangent function
     def tanh_func(x):
-        return np.tanh(x)  # Devuelve la tangente hiperbólica de x
+        return np.tanh(x)  # Returns the hyperbolic tangent of x
     
-    # Derivada de la tangente hiperbólica
+    # Derivative of the hyperbolic tangent function
     def tanh_deriv(x):
-        return 1 - np.tanh(x)**2  # Fórmula de la derivada de tanh(x): 1 - tanh²(x)
+        return 1 - np.tanh(x)**2  # Formula for the derivative of tanh(x): 1 - tanh²(x)
     
-    # Definir el rango de valores para x
-    x = np.linspace(-5, 5, 400)  # Crea un array con 400 valores equidistantes en el rango [-5, 5]
+    # Define the range of x values
+    x = np.linspace(-5, 5, 400)  # Creates an array with 400 equally spaced values in the range [-5, 5]
     
-    # Evaluar la función tangente hiperbólica en los valores de x
+    # Evaluate the hyperbolic tangent function at x values
     y = tanh_func(x)
     
-    # Evaluar la derivada de la función tangente hiperbólica en los valores de x
+    # Evaluate the derivative of the hyperbolic tangent function at x values
     y_deriv = tanh_deriv(x)
 
-    # Crear una figura para la gráfica
-    plt.figure(figsize=(8, 6))  # Define el tamaño de la figura en pulgadas (8x6)
+    # Create a figure for the plot
+    plt.figure(figsize=(8, 6))  # Defines the figure size in inches (8x6)
     
-    # Graficar la función tangente hiperbólica
-    plt.plot(x, y, label='Tangente Hiperbólica (tanh x)')  
+    # Plot the hyperbolic tangent function
+    plt.plot(x, y, label='Hyperbolic Tangent (tanh x)')  
     
-    # Graficar la derivada de la función tangente hiperbólica con línea punteada y color verde
-    plt.plot(x, y_deriv, label='Derivada', linestyle='--', color='green')
+    # Plot the derivative of the hyperbolic tangent function with a dashed green line
+    plt.plot(x, y_deriv, label='Derivative', linestyle='--', color='green')
     
-    # Etiquetas de los ejes
+    # Axis labels
     plt.xlabel('x')
-    plt.ylabel('Valor')
+    plt.ylabel('Value')
     
-    # Título del gráfico
-    plt.title('Función Tangente Hiperbólica y su Derivada')
+    # Plot title
+    plt.title('Hyperbolic Tangent Function and Its Derivative')
     
-    # Agregar leyenda para identificar las curvas
+    # Add legend to identify the curves
     plt.legend()
     
-    # Agregar cuadrícula para mejorar la visualización
+    # Add grid for better visualization
     plt.grid(True)
     
-    # Mostrar la gráfica en pantalla
+    # Display the plot
     plt.show()
 
-# Verifica si el script se ejecuta directamente
+# Check if the script is run directly
 if __name__ == "__main__":
-    plot_tanh()  # Llama a la función para graficar la función tangente hiperbólica y su derivada
+    plot_tanh()  # Calls the function to plot the hyperbolic tangent function and its derivative

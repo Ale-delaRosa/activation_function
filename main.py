@@ -11,7 +11,13 @@ from src.sinusoidal import plot_sinusoidal  # Function to plot a sinusoidal sign
 from src.tanh import plot_tanh  # Function to plot the hyperbolic tangent
 
 def main():
-    print("Generado gráficas")  
+    """
+    This function generates and displays multiple plots for different activation functions and mathematical functions.
+    It calls separate functions for plotting the Gaussian distribution, step function, identity function,
+    piecewise linear function, ReLU, sigmoid, sinusoidal, and hyperbolic tangent functions.
+    """
+
+    print("Generating plots")  
 
     # Call each of the imported functions to generate the corresponding plots
     plot_gaussian()
@@ -23,7 +29,7 @@ def main():
     plot_sinusoidal()
     plot_tanh()
 
-    print("Gráficas generadas correctamente.") 
+    print("Plots generated successfully.") 
 
 # Check if the script is being run directly
 if __name__ == "__main__":

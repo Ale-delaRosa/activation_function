@@ -4,6 +4,10 @@ import matplotlib.pyplot as plt  # Library for generating plots
 
 # Definition of the function that plots the ReLU function and its derivative
 def plot_relu():
+    ''' 
+    Plots the ReLU (Rectified Linear Unit) function and its derivative.
+    ReLU is widely used as an activation function in deep learning models.
+    '''
    
     # Definition of the ReLU (Rectified Linear Unit) function
     def relu(x):

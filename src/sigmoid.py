@@ -4,7 +4,11 @@ import matplotlib.pyplot as plt  # Library for generating plots
 
 # Definition of the function that plots the sigmoid function and its derivative
 def plot_sigmoid():
-   
+    ''' 
+    Plots the sigmoid function and its derivative. 
+    The sigmoid function is a common activation function in neural networks.
+    '''
+    
     # Definition of the sigmoid function
     def sigmoid(x):
         return 1 / (1 + np.exp(-x))  # Sigmoid function formula

@@ -1,52 +1,57 @@
-# Importación de bibliotecas necesarias
-import numpy as np  # Biblioteca para operaciones matemáticas y manejo de arreglos numéricos
-import matplotlib.pyplot as plt  # Biblioteca para la generación de gráficos
+# Import necessary libraries
+import numpy as np  # Library for mathematical operations and numerical array handling
+import matplotlib.pyplot as plt  # Library for generating plots
 
-# Definición de la función que grafica la función gaussiana y su derivada
+# Definition of the function that plots the Gaussian function and its derivative
 def plot_gaussian():
+    ''' 
+    Plots the Gaussian function (standard normal distribution) and its derivative.
+    The Gaussian function is given by: f(x) = (1 / sqrt(2π)) * exp(-x² / 2).
+    Its derivative is: f'(x) = -x * f(x).
+    '''
 
-    # Definición de la función gaussiana (distribución normal estándar)
+    # Definition of the Gaussian function (standard normal distribution)
     def gaussian(x):
-        return (1 / np.sqrt(2 * np.pi)) * np.exp(-x**2 / 2)  # Fórmula de la distribución normal estándar
+        return (1 / np.sqrt(2 * np.pi)) * np.exp(-x**2 / 2)  # Standard normal distribution formula
 
-    # Derivada de la función gaussiana
+    # Derivative of the Gaussian function
     def gaussian_deriv(x):
-        return -x * gaussian(x)  # Derivada de la función gaussiana con respecto a x
+        return -x * gaussian(x)  # Derivative of the Gaussian function with respect to x
     
-    # Definir el rango de valores para x
-    x = np.linspace(-10, 10, 400)  # Crea un array con 400 valores equidistantes en el rango [-10, 10]
+    # Define the range of x values
+    x = np.linspace(-10, 10, 400)  # Creates an array with 400 equally spaced values in the range [-10, 10]
     
-    # Evaluar la función gaussiana en los valores de x
+    # Evaluate the Gaussian function at x values
     y = gaussian(x)
     
-    # Evaluar la derivada de la función gaussiana en los valores de x
+    # Evaluate the derivative of the Gaussian function at x values
     y_deriv = gaussian_deriv(x)
     
-    # Crear una figura para la gráfica
-    plt.figure(figsize=(8, 6))  # Define el tamaño de la figura en pulgadas (8x6)
+    # Create a figure for the plot
+    plt.figure(figsize=(8, 6))  # Defines the figure size in inches (8x6)
     
-    # Graficar la función gaussiana
-    plt.plot(x, y, label='Función Gaussiana')  
+    # Plot the Gaussian function
+    plt.plot(x, y, label='Gaussian Function')  
     
-    # Graficar la derivada de la función gaussiana con línea punteada y color verde
-    plt.plot(x, y_deriv, label='Derivada', linestyle='--', color='green')
+    # Plot the derivative of the Gaussian function with a dashed green line
+    plt.plot(x, y_deriv, label='Derivative', linestyle='--', color='green')
     
-    # Etiquetas de los ejes
+    # Axis labels
     plt.xlabel('x')
-    plt.ylabel('Valor')
+    plt.ylabel('Value')
     
-    # Título del gráfico
-    plt.title('Función Gaussiana y su Derivada')
+    # Plot title
+    plt.title('Gaussian Function and Its Derivative')
     
-    # Agregar leyenda para identificar las curvas
+    # Add legend to identify the curves
     plt.legend()
     
-    # Agregar cuadrícula para mejorar la visualización
+    # Add grid for better visualization
     plt.grid(True)
     
-    # Mostrar la gráfica en pantalla
+    # Display the plot
     plt.show()
 
-# Verifica si el script se ejecuta directamente
+# Check if the script is run directly
 if __name__ == "__main__":
-    plot_gaussian()  # Llama a la función para graficar la función gaussiana y su derivada
+    plot_gaussian()  # Calls the function to plot the Gaussian function and its derivative

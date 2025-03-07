@@ -1,48 +1,52 @@
-# Importación de bibliotecas necesarias
-import numpy as np  # Biblioteca para operaciones matemáticas y manipulación de arreglos numéricos
-import matplotlib.pyplot as plt  # Biblioteca para la generación de gráficos
+# Import necessary libraries
+import numpy as np  # Library for mathematical operations and array manipulation
+import matplotlib.pyplot as plt  # Library for generating plots
 
-# Definición de la función que grafica la función escalón (Heaviside) y su derivada aproximada
+# Define the function that plots the step function (Heaviside) and its approximate derivative
 def plot_step_function():
-
-    # Definición de la función escalón (Heaviside)
+    """
+    This function plots the Heaviside step function and its approximate derivative.
+    The derivative is approximated as a zero function except for a discontinuity at x = 0.
+    """
+    
+    # Define the step function (Heaviside)
     def step_function(x):
-        return np.where(x < 0, 0, 1)  # Devuelve 0 si x < 0, y 1 si x >= 0
+        return np.where(x < 0, 0, 1)  # Returns 0 if x < 0, and 1 if x >= 0
     
-    # Definir el rango de valores para x
-    x = np.linspace(-10, 10, 400)  # Crea un array de 400 valores equidistantes en el rango [-10, 10]
+    # Define the range of values for x
+    x = np.linspace(-10, 10, 400)  # Creates an array of 400 evenly spaced values in the range [-10, 10]
     
-    # Evaluar la función escalón en los valores de x
+    # Evaluate the step function at the values of x
     y = step_function(x)
     
-    # Derivada aproximada de la función escalón
-    y_deriv = np.zeros_like(x)  # La derivada es 0 en casi todo el dominio (excepto en x=0, que es una discontinuidad)
+    # Approximate derivative of the step function
+    y_deriv = np.zeros_like(x)  # The derivative is 0 over most of the domain (except at x=0, where there is a discontinuity)
     
-    # Crear una figura para la gráfica
-    plt.figure(figsize=(8, 6))  # Define el tamaño de la figura en pulgadas (8x6)
+    # Create a figure for the plot
+    plt.figure(figsize=(8, 6))  # Defines the figure size in inches (8x6)
     
-    # Graficar la función escalón
-    plt.plot(x, y, label='Función Escalón')  
+    # Plot the step function
+    plt.plot(x, y, label='Step Function')  
     
-    # Graficar la derivada aproximada (línea punteada de color verde)
-    plt.plot(x, y_deriv, label='Derivada (aproximada)', linestyle='--', color='green')
+    # Plot the approximate derivative (dashed green line)
+    plt.plot(x, y_deriv, label='Approximate Derivative', linestyle='--', color='green')
     
-    # Etiquetas de los ejes
+    # Axis labels
     plt.xlabel('x')
-    plt.ylabel('Valor')
+    plt.ylabel('Value')
     
-    # Título del gráfico
-    plt.title('Función Escalón y su Derivada')
+    # Title of the plot
+    plt.title('Step Function and its Derivative')
     
-    # Agregar leyenda para identificar las curvas
+    # Add a legend to identify the curves
     plt.legend()
     
-    # Agregar cuadrícula para mejorar la visualización
+    # Add grid to improve visibility
     plt.grid(True)
     
-    # Mostrar la gráfica en pantalla
+    # Display the plot on screen
     plt.show()
 
-# Verifica si el script se ejecuta directamente
+# Check if the script is executed directly
 if __name__ == "__main__":
-    plot_step_function()  # Llama a la función para graficar la función escalón y su derivada
+    plot_step_function()  # Call the function to plot the step function and its derivative
